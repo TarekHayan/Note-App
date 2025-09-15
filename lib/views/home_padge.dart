@@ -6,6 +6,14 @@ class HomePadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: NotesView());
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.greenAccent,
+        shape: CircleBorder(),
+        child: Icon(Icons.add, color: Colors.black),
+      ),
+      body: const NotesView(),
+    );
   }
 }

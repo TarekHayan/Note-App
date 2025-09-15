@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CustomIconButoom extends StatelessWidget {
-  const CustomIconButoom({super.key, required this.icon});
+  const CustomIconButoom({super.key, required this.icon, this.size = 30});
 
   final IconData icon;
+  final double size;
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/consts.dart';
 import 'package:note_app/widgets/custom_model_buttom_sheet.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
@@ -15,7 +16,7 @@ class CustomFloatingActionButton extends StatelessWidget {
           },
         );
       },
-      backgroundColor: Colors.greenAccent,
+      backgroundColor: pcolor,
       shape: const CircleBorder(),
       child: const Icon(Icons.add, color: Colors.black),
     );

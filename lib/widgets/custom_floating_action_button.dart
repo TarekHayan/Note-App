@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/widgets/custom_model_buttom_sheet.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({super.key});
@@ -6,7 +7,14 @@ class CustomFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () {},
+      onPressed: () {
+        showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return CustomModelButtomSheet();
+          },
+        );
+      },
       backgroundColor: Colors.greenAccent,
       shape: const CircleBorder(),
       child: const Icon(Icons.add, color: Colors.black),

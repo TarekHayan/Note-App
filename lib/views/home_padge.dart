@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/widgets/custom_floating_action_button.dart';
 import 'package:note_app/widgets/notes_view.dart';
 
 class HomePadge extends StatelessWidget {
@@ -7,12 +8,7 @@ class HomePadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.greenAccent,
-        shape: CircleBorder(),
-        child: Icon(Icons.add, color: Colors.black),
-      ),
+      floatingActionButton: const CustomFloatingActionButton(),
       body: const NotesView(),
     );
   }

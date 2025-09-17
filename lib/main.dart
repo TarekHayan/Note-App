@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:note_app/consts.dart';
 import 'package:note_app/views/home_padge.dart';
 
-void main() {
+void main() async {
   runApp(NoteApp());
+  await Hive.initFlutter();
+
+  await Hive.openBox(pname);
 }
 
 class NoteApp extends StatelessWidget {

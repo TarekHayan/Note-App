@@ -4,7 +4,6 @@ import 'package:note_app/widgets/note_item_list.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Padding(

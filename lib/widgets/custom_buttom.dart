@@ -3,7 +3,6 @@ import 'package:note_app/consts.dart';
 
 class CustomButtom extends StatelessWidget {
   const CustomButtom({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Center(

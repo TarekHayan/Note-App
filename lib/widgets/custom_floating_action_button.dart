@@ -4,7 +4,6 @@ import 'package:note_app/widgets/custom_model_buttom_sheet.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({super.key});
-
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(

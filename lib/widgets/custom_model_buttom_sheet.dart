@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:note_app/cubits/cubit/add_note_cubit.dart';
 import 'package:note_app/widgets/cheak_availb_note.dart';
 
@@ -11,25 +10,25 @@ class CustomModelButtomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AddNoteCubit(),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        child: BlocConsumer<AddNoteCubit, AddNoteState>(
-          listener: (context, state) {
-            if (state is AddNotefaliar) {
-              print("faild ${state.errorMassege}");
-            }
+      child: BlocConsumer<AddNoteCubit, AddNoteState>(
+        listener: (context, state) {
+          if (state is AddNotefaliar) {
+            print("faild ${state.errorMassege}");
+          }
 
-            if (state is AddNoteSuccess) {
-              Navigator.pop(context);
-            }
-          },
-          builder: (context, state) {
-            return ModalProgressHUD(
-              inAsyncCall: state is AddNoteLoading ? true : false,
+          if (state is AddNoteSuccess) {
+            Navigator.pop(context);
+          }
+        },
+        builder: (context, state) {
+          return AbsorbPointer(
+            absorbing: state is AddNoteLoading ? true : false,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: const SingleChildScrollView(child: CheakAvaildNote()),
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }

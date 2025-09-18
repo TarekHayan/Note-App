@@ -19,7 +19,6 @@ class CustomModelButtomSheet extends StatelessWidget {
 
           if (state is AddNoteSuccess) {
             Navigator.pop(context);
-            print("success");
           }
         },
         builder: (context, state) {

@@ -9,8 +9,8 @@ import 'package:note_app/views/home_padge.dart';
 void main() async {
   runApp(NoteApp());
   await Hive.initFlutter();
-  await Hive.openBox(pname);
   Hive.registerAdapter(NoteModelAdapter());
+  await Hive.openBox<NoteModel>(pname);
 }
 
 class NoteApp extends StatelessWidget {

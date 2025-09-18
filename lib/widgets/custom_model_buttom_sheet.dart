@@ -11,24 +11,23 @@ class CustomModelButtomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
-        child: BlocConsumer<AddNoteCubit, AddNoteState>(
-          listener: (context, state) {
-            if (state is AddNotefaliar) {
-              print("faild ${state.errorMassege}");
-            }
+      child: BlocConsumer<AddNoteCubit, AddNoteState>(
+        listener: (context, state) {
+          if (state is AddNotefaliar) {
+            print("faild ${state.errorMassege}");
+          }
 
-            if (state is AddNoteSuccess) {
-              Navigator.pop(context);
-            }
-          },
-          builder: (context, state) {
-            return ModalProgressHUD(
-              inAsyncCall: state is AddNoteLoading ? true : false,
-              child: const CheakAvaildNote(),
-            );
-          },
-        ),
+          if (state is AddNoteSuccess) {
+            Navigator.pop(context);
+            print("success");
+          }
+        },
+        builder: (context, state) {
+          return ModalProgressHUD(
+            inAsyncCall: state is AddNoteLoading ? true : false,
+            child: const SingleChildScrollView(child: CheakAvaildNote()),
+          );
+        },
       ),
     );
   }

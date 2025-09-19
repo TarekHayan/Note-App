@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/widgets/custom_floating_action_button.dart';
-import 'package:note_app/widgets/notes_view.dart';
+import 'package:note_app/widgets/notes_view_body.dart';
 
 class HomePadge extends StatelessWidget {
   const HomePadge({super.key});
@@ -9,7 +9,7 @@ class HomePadge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: const CustomFloatingActionButton(),
-      body: const NotesView(),
+      body: const NotesViewBody(),
     );
   }
 }

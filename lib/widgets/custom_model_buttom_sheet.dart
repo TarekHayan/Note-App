@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_app/cubits/cubit/add_note_cubit.dart';
+import 'package:note_app/cubits/cubit/add_notes_cubit/add_note_cubit.dart';
 import 'package:note_app/widgets/cheak_availb_note.dart';
 
 class CustomModelButtomSheet extends StatelessWidget {

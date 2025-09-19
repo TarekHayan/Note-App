@@ -7,10 +7,11 @@ import 'package:note_app/models/note_model.dart';
 part 'note_cubit_state.dart';
 
 class NoteCubitCubit extends Cubit<NoteCubitState> {
+  List<NoteModel>? notes;
   NoteCubitCubit() : super(NoteCubitInitial());
   fitchNote() {
     var noteBox = Hive.box<NoteModel>(pname);
-    List<NoteModel> notes = noteBox.values.toList();
-    emit((NoteCubitSucess(notes)));
+    notes = noteBox.values.toList();
+    emit((NoteCubitSucess()));
   }
 }

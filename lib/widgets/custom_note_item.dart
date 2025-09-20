@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:note_app/cubits/cubit/cubit/note_cubit_cubit.dart';
 import 'package:note_app/models/note_model.dart';
@@ -26,7 +25,7 @@ class CustomNoteItem extends StatelessWidget {
         padding: EdgeInsets.only(left: 10, top: 20, bottom: 24),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: Colors.amber,
+          color: Color(note.color),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,

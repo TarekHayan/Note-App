@@ -31,7 +31,7 @@ class _CheakAvaildNoteState extends State<CheakAvaildNote> {
               title = value;
             },
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 15),
           CustomTextField(
             hint: "describtion",
             maxLines: 5,
@@ -39,9 +39,9 @@ class _CheakAvaildNoteState extends State<CheakAvaildNote> {
               subtitle = value;
             },
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 15),
           WcolorList(),
-          const SizedBox(height: 10),
+          const SizedBox(height: 15),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButtom(

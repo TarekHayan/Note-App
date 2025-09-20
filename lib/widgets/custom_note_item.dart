@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:note_app/cubits/cubit/cubit/note_cubit_cubit.dart';
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/edit_note.dart';
 
@@ -15,7 +17,7 @@ class CustomNoteItem extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return EditNote();
+              return EditNote(note: note);
             },
           ),
         );
@@ -43,9 +45,12 @@ class CustomNoteItem extends StatelessWidget {
                 ),
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                  BlocProvider.of<NoteCubitCubit>(context).fitchNote();
+                },
                 icon: Icon(
-                  FontAwesomeIcons.trash,
+                  Icons.check_box_outline_blank,
                   color: Colors.black,
                   size: 28,
                 ),

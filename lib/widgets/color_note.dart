@@ -33,7 +33,7 @@ class _WcolorListState extends State<WcolorList> {
     return SizedBox(
       height: 30 * 2,
       child: ListView.builder(
-        itemCount: pcolors.length,
+        itemCount: colorsList.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Padding(
@@ -41,10 +41,14 @@ class _WcolorListState extends State<WcolorList> {
             child: GestureDetector(
               onTap: () {
                 cindex = index;
-                BlocProvider.of<AddNoteCubit>(context).color = pcolors[index];
+                BlocProvider.of<AddNoteCubit>(context).color =
+                    colorsList[index];
                 setState(() {});
               },
-              child: Wcolor(isActive: cindex == index, color: pcolors[index]),
+              child: Wcolor(
+                isActive: cindex == index,
+                color: colorsList[index],
+              ),
             ),
           );
         },

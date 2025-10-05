@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_app/consts.dart';
-import 'package:note_app/cubits/cubit/cubit/note_cubit_cubit.dart';
-import 'package:note_app/models/note_model.dart';
-import 'package:note_app/widgets/color_note.dart';
-import 'package:note_app/widgets/custom_app_bar.dart';
-import 'package:note_app/widgets/custom_text_field.dart';
+import '../consts.dart';
+import '../cubits/cubit/cubit/note_cubit_cubit.dart';
+import '../models/note_model.dart';
+import 'color_note.dart';
+import 'custom_app_bar.dart';
+import 'custom_text_field.dart';
 
 class EditNoteBody extends StatefulWidget {
   const EditNoteBody({super.key, required this.note});
@@ -69,7 +69,7 @@ class _EditNoteColorState extends State<EditNoteColor> {
   late int cindex;
   @override
   void initState() {
-    cindex = pcolors.indexOf(Color(widget.note.color));
+    cindex = colorsList.indexOf(Color(widget.note.color));
     super.initState();
   }
 
@@ -78,7 +78,7 @@ class _EditNoteColorState extends State<EditNoteColor> {
     return SizedBox(
       height: 30 * 2,
       child: ListView.builder(
-        itemCount: pcolors.length,
+        itemCount: colorsList.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Padding(
@@ -86,10 +86,13 @@ class _EditNoteColorState extends State<EditNoteColor> {
             child: GestureDetector(
               onTap: () {
                 cindex = index;
-                widget.note.color = pcolors[index].value;
+                widget.note.color = colorsList[index].value;
                 setState(() {});
               },
-              child: Wcolor(isActive: cindex == index, color: pcolors[index]),
+              child: Wcolor(
+                isActive: cindex == index,
+                color: colorsList[index],
+              ),
             ),
           );
         },

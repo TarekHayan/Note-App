@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const pcolor = Colors.greenAccent;
 const pname = "notes_box";
-List<Color> pcolors = [
+List<Color> colorsList = [
   Color(0xffFFBE0B),
   Color(0xffFB5607),
   Color(0xffc1121f),

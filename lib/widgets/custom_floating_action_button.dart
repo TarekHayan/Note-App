@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/consts.dart';
-import 'package:note_app/widgets/custom_model_buttom_sheet.dart';
+import '../consts.dart';
+import 'custom_model_buttom_sheet.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({super.key});

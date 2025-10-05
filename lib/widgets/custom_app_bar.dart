@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/widgets/custom_icon_butoom.dart';
+import 'custom_icon_butoom.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({

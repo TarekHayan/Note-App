@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/widgets/custom_floating_action_button.dart';
-import 'package:note_app/widgets/notes_view_body.dart';
+import '../widgets/custom_floating_action_button.dart';
+import '../widgets/notes_view_body.dart';
 
 class HomePadge extends StatelessWidget {
   const HomePadge({super.key});

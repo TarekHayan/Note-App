@@ -22,6 +22,7 @@ class CustomTextField extends StatelessWidget {
         if (value?.isEmpty ?? true) {
           return "this field is requrid";
         }
+        return "";
       },
       keyboardType: TextInputType.name,
       maxLines: maxLines,
